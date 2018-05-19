@@ -77,7 +77,9 @@ export class MyProfilePage extends React.Component {
         longitude: '',
         latitude: '',
         profileImage: 'noAvatar.png',
-        birthdate: ''
+        birthdate: '',
+        // This is the userType
+        userType: ''
       },
       header: {
         avatar: 'noAvatar.png'
@@ -435,6 +437,18 @@ export class MyProfilePage extends React.Component {
                           fullWidth
                           /><br/>
                       </Col>
+                     {/* This is for userType */}
+                      <Col md={6}>
+                        <TextField
+                          id='userTypeInput'
+                          ref='userType'
+                          name='userType'
+                          type='text'
+                          floatingLabelText='Volunteer, provider or Patient?'
+                          value={this.data.user.UserRole}
+                          fullWidth
+                          /><br/>
+                      </Col>
                     </Row>
                     <Row>
                       <Col md={3}>
@@ -477,6 +491,91 @@ export class MyProfilePage extends React.Component {
 
                       </Col>
                     </Row>
+                    <Row> {/* Volunteer certifications */}
+                      <TextField
+                        id='volunteerCertInput'
+                        ref='volunteerCert'
+                        name='VolunteerCert'
+                        type='text'
+                        floatingLabelText='Certifications'
+                        value={this.data.user.UserRole}
+                        fullWidth
+                        /><br/> 
+                                             
+                    </Row>
+                    <Row>
+                    {/*  Address data for profile. */}
+                      <TextField
+                        id='addressInput'
+                        ref='address'
+                        name='address'
+                        type='text'
+                        floatingLabelText='Address'
+                        value={this.data.user.UserRole}
+                        fullWidth
+                        /><br/>                     
+                    </Row>
+                    <Row> {/* Height data for profile*/} 
+                      <TextField
+                        id='heightInput'
+                        ref='height'
+                        name='height'
+                        type='text'
+                        floatingLabelText='Height'
+                        value={this.data.user.UserRole}
+                        fullWidth
+                        /><br/>                          
+                                             
+                    </Row> 
+                    <Row>
+                      {/* Address data for weight */}
+                      <TextField
+                        id='weightInput'
+                        ref='weight'
+                        name='weight'
+                        type='text'
+                        floatingLabelText='Weight'
+                        value={this.data.user.UserRole}
+                        fullWidth
+                        /><br/>                          
+                    </Row>
+                    <Row>
+                      {/* Address data for build */}
+                      <TextField
+                        id='buildInput'
+                        ref='build'
+                        name='build'
+                        type='text'
+                        floatingLabelText='Build'
+                        value={this.data.user.UserRole}
+                        fullWidth
+                        /><br/>                          
+                    </Row>
+                    <Row>
+                      {/* Address data for ethnicity */}
+                      <TextField
+                        id='ethnicityInput'
+                        ref='ethnicity'
+                        name='ethnicity'
+                        type='text'
+                        floatingLabelText='Ethnicity'
+                        value={this.data.user.UserRole}
+                        fullWidth
+                        /><br/>                          
+                    </Row>
+                    <Row>
+                      {/* Address data for availability */}
+                      <TextField
+                        id='availabilityInput'
+                        ref='availibility'
+                        name='availability'
+                        type='text'
+                        floatingLabelText='Availability'
+                        value={this.data.user.UserRole}
+                        fullWidth
+                        /><br/>                          
+                    </Row>
+                     
                   </div>
                 </Tab>
 
