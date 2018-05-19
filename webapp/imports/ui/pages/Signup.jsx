@@ -24,6 +24,10 @@ export class Signup extends React.Component {
   componentDidMount() {
     //handleSignup({ component: this });
   }
+//This function adds the userType
+  addUserType(userTypeValue){
+    Meteor.call('addUserType', userTypeValue );
+  }  
   getMeteorData() {
     let data = {
       style: {
@@ -83,6 +87,9 @@ export class Signup extends React.Component {
           family: this.refs.familyName.input.value,
           text: this.refs.givenName.input.value + ' ' + this.refs.familyName.input.value
         },
+        // User role is for the usertype
+        userRole : this.refs.userType.input.value,
+
         accessCode: this.refs.accessCode.input.value
       }
     };
@@ -208,8 +215,135 @@ export class Signup extends React.Component {
                       onKeyPress={this.handleKeyPress.bind(this)}
                       fullWidth
                       /><br/>
-
-                    { acccessCode }
+                    {/* This is the userType */}
+                    <TextField
+                      id='userTypeInput'
+                      ref='userType'
+                      name='userType'
+                      type='userType'
+                      floatingLabelText='Volunteer, Provider or Patient?'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/>                    
+                    {/* This is the asks if there is a certification if a volunteer?  */}
+                    <TextField
+                      id='volunteerCertInput'
+                      ref='volunteerCert'
+                      name='VolunteerCert'
+                      type='VolunteerCert'
+                      floatingLabelText='Please provide any certifications you have, if you are a volunteer.'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/> 
+                    {/* This is for the address */}
+                    <TextField
+                      id='addressInput'
+                      ref='address'
+                      name='address'
+                      type='address'
+                      floatingLabelText='Address'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/> 
+                     {/*This is for the height*/}
+                    <TextField
+                      id='heightInput'
+                      ref='height'
+                      name='height'
+                      type='height'
+                      floatingLabelText='Height'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/>                      
+                     {/*This is for the weight*/}
+                    <TextField
+                      id='weightInput'
+                      ref='weight'
+                      name='weight'
+                      type='weight'
+                      floatingLabelText='Weight'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/>                      
+                     {/*This is for the build*/}
+                    <TextField
+                      id='buildInput'
+                      ref='build'
+                      name='build'
+                      type='build'
+                      floatingLabelText='Build'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/>                      
+                     {/*This is for the ethnicity*/}
+                    <TextField
+                      id='ethnicityInput'
+                      ref='ethnicity'
+                      name='ethnicity'
+                      type='ethnicity'
+                      floatingLabelText='Ethnicity'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/>                      
+                     {/*This is for the availability of the schedule*/ } 
+                    <TextField
+                      id='availabilityInput'
+                      ref='availibility'
+                      name='availability'
+                      type='availability'
+                      floatingLabelText='When are you available?'
+                      inputStyle={this.data.style.inputStyle}
+                      errorStyle={this.data.style.errorStyle}
+                      hintStyle={this.data.style.hintStyle}
+                      underlineStyle={this.data.style.underlineStyle}
+                      floatingLabelStyle={this.data.style.floatingLabelStyle}
+                      floatingLabelFocusStyle={this.data.style.floatingLabelFocusStyle}
+                      onKeyPress={this.handleKeyPress.bind(this)}
+                      fullWidth
+                      /><br/>                      
+                    {/* { acccessCode } */}
 
                   <br/>
                   <br/>
